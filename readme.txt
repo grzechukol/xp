@@ -1,2 +1,3 @@
 Grzegorz Kolano
+Michał Pałys
 
