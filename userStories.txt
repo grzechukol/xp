@@ -1,0 +1,27 @@
+User stories:
+
+-jako użytkownik aplikacji chce mieć możliwość zapisywania transakcji do listy
+
+-chce edytować wpisane wcześniej transakcje
+
+-jako użytkownik aplikacji chce przeglądać historię transakcji
+
+-jako użytkownik aplikacji chce filtrować historię transakcji
+
+-chce mieć możliwość podziału transakcji na innych użytkowników
+
+-chce mieć możliwość zapisywania dodatkowych danych (metadane)
+
+-chce mieć możliwość prowadzenia wspólnego budżetu
+
+-możliwość generowania wykresów/podsumowań z wydatków
+
+-chcę mieć możliwość określenia limitu miesięcznego
+
+-jako użytkownik chce mieć możliwość kategoryzowania wydatków
+
+-chce otrzymywać notyfikacje o operacjach i akcjach na koncie
+
+-chce stworzyć konto oraz edytować swój profil
+
+-w razie zapomnienia hasła chce mieć możliwość zresetowania hasła
