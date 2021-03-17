@@ -1,0 +1,13 @@
+1) Otwieranie klamr: na końcu linijki
+
+int fun() {
+ ...
+}
+
+2) Wcięcia: pojedyncza spacja
+3) Nazewnictwo:
+   - po angielsku (włącznie z komentarzami)
+   - camelCase dla klas, metod i zmiennych
+4) Podział kodu źródłowego
+   - każda klasa w osobnym pliku
+   
