@@ -25,3 +25,7 @@ User stories:
 -chce stworzyć konto oraz edytować swój profil
 
 -w razie zapomnienia hasła chce mieć możliwość zresetowania hasła
+
+-jako użytkownik aplikacji chce mieć możliwośc porwadzenia subkont w wielu walutach
+
+-możliwość dokonywania przelewów między subkontami, w tym subkontami wielowalutowymi
