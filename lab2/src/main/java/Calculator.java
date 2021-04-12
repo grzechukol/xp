@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Calculator {
  public int add(String numbers) throws Exception {
@@ -20,13 +22,13 @@ public class Calculator {
           .mapToInt(Integer::parseInt)
           .toArray();
 
-  var negatives = Arrays.stream(splitedNumbers)
-          .filter(x -> x < 0)
-          .mapToObj(String::valueOf)
-          .toArray(String[]::new);
+  List<Integer> negatives = new ArrayList<Integer>();
+  for (var number : splitedNumbers){
+   if (number < 0) negatives.add(number);
+  }
 
-  if (negatives.length > 0) {
-   throw new Exception("Negatives not allowed: " + String.join(",", negatives));
+  if (!negatives.isEmpty()) {
+   throw new Exception("Negatives not allowed: " + String.join(",", negatives.toString()));
   }
 
   return Arrays.stream(splitedNumbers).sum();

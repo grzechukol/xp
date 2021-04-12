@@ -71,5 +71,26 @@ public class CalculatorBinaryTests {
         Assertions.assertEquals(expected, result);
     }
 
-    // TODO: f, g
+    // f
+    public static Stream<Arguments> getParams_noOfBits1_throwsException_ifWrongDelimiter(){
+        return Stream.of(Arguments.of("2m4", 2), Arguments.of("4,7,8", 2));
+    }
+
+    @ParameterizedTest
+    @MethodSource("getParams_noOfBits1_throwsException_ifWrongDelimiter")
+    public void noOfBits1_throwsException_ifWrongDelimiter(String number, int expected) throws Exception {
+        // Arrange
+        var systemUnderTest = new CalculatorBinary();
+
+        // Act
+        Exception exception = assertThrows(Exception.class, () -> {
+            systemUnderTest.noOfBits1(number);
+        });
+        String expectedMessage = "Invalid number passed";
+        String actualMessage = exception.getMessage();
+
+        // Assert
+        assertTrue(actualMessage.contains(expectedMessage));
+    }
+
 }
