@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="mavenExecutorSetting">
+    <option name="defaultSettings">
+      <ExecutionSettings>
+        <option name="goals">
+          <list>
+            <option value="mvn" />
+            <option value="clean" />
+            <option value="install" />
+          </list>
+        </option>
+      </ExecutionSettings>
+    </option>
+    <option name="goalsHistory">
+      <History>
+        <option name="items">
+          <list>
+            <option value="mvn clean install" />
+          </list>
+        </option>
+      </History>
+    </option>
+  </component>
+</project>
