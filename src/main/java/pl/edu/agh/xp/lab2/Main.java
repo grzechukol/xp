@@ -1,11 +1,11 @@
 package pl.edu.agh.xp.lab2;
 
-import java.io.PrintWriter;
+import java.util.Arrays;
 
 public class Main {
+
     public static void main(String[] args){
 
-        System.out.print("Main works");
-
+        System.out.println("Main works");
     }
 }
