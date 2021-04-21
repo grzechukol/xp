@@ -93,6 +93,13 @@ public class CalculatorTests {
         assertEquals(expected, result);
     }
 
+    private static Stream<Arguments> stringToValueWithNegative() {
+        return Stream.of(
+                arguments("-1,2,3", "-1"),
+                arguments("10\n-90,-10\n20", "-90,-10")
+            );
+    }
+
     @ParameterizedTest
     @MethodSource("stringToValueWithNegative")
     public void Add_ShouldThrowException_WhenNegativeNumber(String calculation, String negativeNumbers) {
@@ -100,7 +107,8 @@ public class CalculatorTests {
         var sut = new Calculator();
 
         // Act
-        Exception exception = assertThrows(Exception.class, () -> {
+        NegativeNumberException exception = assertThrows(NegativeNumberException.class, () -> {
+
             sut.add(calculation);
         });
         String expectedMessage = "Negatives not allowed: " + negativeNumbers;

@@ -25,7 +25,7 @@ public class Calculator {
                 .toArray(String[]::new);
 
         if(Arrays.stream(negatives).findAny().isPresent()) {
-            throw new Exception("Negatives not allowed: " + String.join(",", negatives));
+            throw new NegativeNumberException("Negatives not allowed: " + String.join(",", negatives));
         }
 
         return Arrays.stream(splitedNumbers).reduce(0, Integer::sum);
