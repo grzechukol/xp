@@ -108,6 +108,7 @@ public class CalculatorTests {
 
         // Act
         NegativeNumberException exception = assertThrows(NegativeNumberException.class, () -> {
+
             sut.add(calculation);
         });
         String expectedMessage = "Negatives not allowed: " + negativeNumbers;
