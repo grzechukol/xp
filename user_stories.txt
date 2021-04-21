@@ -1,18 +1,18 @@
 User stories:
 
--jako użytkownik aplikacji chce mieć możliwość zapisywania transakcji do listy
+-jako użytkownik aplikacji chce mieć możliwość zapisywania transakcji do listy (14h)
 
--chce edytować wpisane wcześniej transakcje
+-chce edytować wpisane wcześniej transakcje (18h)
 
--jako użytkownik aplikacji chce przeglądać historię transakcji
+-jako użytkownik aplikacji chce przeglądać historię transakcji (12h)
 
--jako użytkownik aplikacji chce filtrować historię transakcji
+-jako użytkownik aplikacji chce filtrować historię transakcji (16h)
 
--chce mieć możliwość podziału transakcji na innych użytkowników
+-chce mieć możliwość podziału transakcji na innych użytkowników (40h)
 
--chce mieć możliwość zapisywania dodatkowych danych (metadane)
+-chce mieć możliwość zapisywania dodatkowych danych - metadane (25h)
 
--chce mieć możliwość prowadzenia wspólnego budżetu
+-chce mieć możliwość prowadzenia wspólnego budżetu (22h?)
 
 -możliwość generowania wykresów/podsumowań z wydatków
 
