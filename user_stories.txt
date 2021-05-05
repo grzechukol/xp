@@ -11,25 +11,25 @@ za godzinę za całość wychodzi 15900$ Na podstawie
 https://www.businessofapps.com/app-developers/research/app-development-cost/
 ------------------------------------------------------------------------------------------
 
--chce stworzyć konto oraz edytować swój profil [P1]
-(17h) 8sp
-0 2 1
-
--w razie zapomnienia hasła chce mieć możliwość zresetowania hasła [P2]
-(22h) 13sp
-1 2 1
-
--jako użytkownik aplikacji chce mieć możliwość zapisywania transakcji do listy [P3]
+-jako użytkownik aplikacji chce mieć możliwość zapisywania transakcji do listy [P1]
 (14h) 5sp
 1 1 1
 
--chce edytować wpisane wcześniej transakcje [P4]
+-chce edytować wpisane wcześniej transakcje [P2]
 (18h) 8sp
 1 1 0
 
--jako użytkownik aplikacji chce przeglądać historię transakcji [P5]
+-chce stworzyć konto oraz edytować swój profil [P3]
+(17h) 8sp
+0 2 1
+
+-jako użytkownik aplikacji chce przeglądać historię transakcji [P4]
 (12h) 5sp
 0 1 0
+
+-w razie zapomnienia hasła chce mieć możliwość zresetowania hasła [P5]
+(22h) 13sp
+1 2 1
 
 -chcę mieć możliwość określenia limitu miesięcznego [P6]
 (15h) 5sp
