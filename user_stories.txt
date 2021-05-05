@@ -1,31 +1,72 @@
 User stories:
 
--jako użytkownik aplikacji chce mieć możliwość zapisywania transakcji do listy
+------------------------------------------------------------------------------------------
+OPIS STRUKTURY WPISU
+- naza user story [priorytet]
+(estymata godzin) estymata story points
+zmienność zdania klienta na ile klient rozumie co chce technologicznie (estymacja ryzyka)
+------------------------------------------------------------------------------------------
+Suma oszacowanych godzin idealnych to 318h. Przy średniej stawce za godzinę 50$
+za godzinę za całość wychodzi 15900$ Na podstawie
+https://www.businessofapps.com/app-developers/research/app-development-cost/
+------------------------------------------------------------------------------------------
 
--chce edytować wpisane wcześniej transakcje
+-chce stworzyć konto oraz edytować swój profil [P1]
+(17h) 8sp
+0 2 1
 
--jako użytkownik aplikacji chce przeglądać historię transakcji
+-w razie zapomnienia hasła chce mieć możliwość zresetowania hasła [P2]
+(22h) 13sp
+1 2 1
 
--jako użytkownik aplikacji chce filtrować historię transakcji
+-jako użytkownik aplikacji chce mieć możliwość zapisywania transakcji do listy [P3]
+(14h) 5sp
+1 1 1
 
--chce mieć możliwość podziału transakcji na innych użytkowników
+-chce edytować wpisane wcześniej transakcje [P4]
+(18h) 8sp
+1 1 0
 
--chce mieć możliwość zapisywania dodatkowych danych (metadane)
+-jako użytkownik aplikacji chce przeglądać historię transakcji [P5]
+(12h) 5sp
+0 1 0
 
--chce mieć możliwość prowadzenia wspólnego budżetu
+-chcę mieć możliwość określenia limitu miesięcznego [P6]
+(15h) 5sp
+0 0 0
 
--możliwość generowania wykresów/podsumowań z wydatków
+-jako użytkownik chce mieć możliwość kategoryzowania wydatków [P7]
+(13h) 5sp
+1 1 2
 
--chcę mieć możliwość określenia limitu miesięcznego
+-chce otrzymywać notyfikacje o operacjach i akcjach na koncie [P8]
+(12h) 5sp
+0 0 1
 
--jako użytkownik chce mieć możliwość kategoryzowania wydatków
+-możliwość generowania wykresów/podsumowań z wydatków [P9]
+(20h) 13sp
+1 2 0
 
--chce otrzymywać notyfikacje o operacjach i akcjach na koncie
+-jako użytkownik aplikacji chce filtrować historię transakcji [P10]
+(16h) 8sp
+1 2 0
 
--chce stworzyć konto oraz edytować swój profil
+-chce mieć możliwość zapisywania dodatkowych danych - metadane [P11]
+(25h) 13 sp
+1 1 2
 
--w razie zapomnienia hasła chce mieć możliwość zresetowania hasła
+-chce mieć możliwość podziału transakcji na innych użytkowników [P12]
+(40h) 40sp
+0 2 0
 
--jako użytkownik aplikacji chce mieć możliwośc porwadzenia subkont w wielu walutach
+-chce mieć możliwość prowadzenia wspólnego budżetu [P13]
+(22h) 13sp
+0 1 1
 
--możliwość dokonywania przelewów między subkontami, w tym subkontami wielowalutowymi
+-jako użytkownik aplikacji chce mieć możliwośc porwadzenia subkont w wielu walutach [P14]
+(30h) 20sp
+2 2 1
+
+-możliwość dokonywania przelewów między subkontami, w tym subkontami wielowalutowymi [P15]
+(42h) 40sp
+2 2 1
