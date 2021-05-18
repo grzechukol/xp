@@ -44,6 +44,6 @@ public class MainTests {
         outList.add("exit");
 
         ConsoleView cv = new ConsoleView();
-        cv.consoleLoop(outList);
+//        cv.consoleLoop(outList);
     }
 }
