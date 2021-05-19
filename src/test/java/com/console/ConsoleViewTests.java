@@ -42,7 +42,7 @@ public class ConsoleViewTests {
     public void MenuShouldReturnProperText() throws Exception {
         ConsoleView consoleView = new ConsoleView();
 
-        String menuMessage = "Choose action:\nadd - add transaction\nread - read transactions\nexit - exit console\nACTION: ";
+        String menuMessage = "\nChoose action:\nadd - add transaction\nread - read transactions\nexit - exit console\nACTION: ";
         String actualMessage = consoleView.menu();
 
         assertEquals(menuMessage, actualMessage);

@@ -24,7 +24,7 @@ public class ConsoleView {
     }
 
     public String menu() {
-        return "Choose action:\nadd - add transaction\nread - read transactions\nexit - exit console\nACTION: ";
+        return "\nChoose action:\nadd - add transaction\nread - read transactions\nexit - exit console\nACTION: ";
     }
 
     public List<String> addTransaction() {
@@ -53,6 +53,8 @@ public class ConsoleView {
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+        } catch (NullPointerException e) {
+            System.out.println("First you have to add transactions!");
         }
     }
 
