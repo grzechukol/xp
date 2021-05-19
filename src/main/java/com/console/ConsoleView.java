@@ -18,8 +18,9 @@ public class ConsoleView {
     private TransactionReader transactionReader;
     private Scanner scanner;
 
-    public ConsoleView() {
+    public ConsoleView() throws IncorrectDataException, IOException {
         this.transactionSaver = new TransactionSaver();
+        this.transactionSaver.appendDataToFile(this.transactionSaver.getColumnNames());
         this.scanner = new Scanner(System.in);
     }
 

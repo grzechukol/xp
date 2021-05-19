@@ -25,13 +25,14 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 public class TransactionSaverTests {
 
     @AfterEach
-    public void cleanUpEach() {
+    public void CleanUpEach() {
         try {
             var dir = new File("./test");
             for (File file : dir.listFiles())
                 file.delete();
+            dir.delete();
         } catch(Exception e) {
-
+            e.printStackTrace();
         }
     }
 

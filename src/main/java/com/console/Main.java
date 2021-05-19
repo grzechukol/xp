@@ -10,11 +10,10 @@ public class Main {
         try {
             File file = new File(TransactionSaver.DEFAULT_FILE);
             file.createNewFile();
-        } catch (IOException e) {
+            ConsoleView consoleView = new ConsoleView();
+            consoleView.consoleLoop();
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
-        ConsoleView consoleView = new ConsoleView();
-        consoleView.consoleLoop();
     }
 }

@@ -32,7 +32,7 @@ public class TransactionReader {
             columnNames = columns;
         }
         catch (IOException e){
-            throw new FileNotFoundException("File" + fileName + "couldn't be found!");
+            throw new FileNotFoundException("File" + fileName + " couldn't be found!");
         }
     }
 
@@ -49,7 +49,7 @@ public class TransactionReader {
             return fileContent;
         }
         catch (IOException e) {
-            throw new FileNotFoundException("File" + fileName + "couldn't be found!");
+            throw new FileNotFoundException("File" + fileName + " couldn't be found!");
         }
     }
 
