@@ -5,12 +5,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class MainTests {
+public class ConsoleViewTests {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     private ByteArrayInputStream inContent = null;
@@ -26,24 +24,27 @@ public class MainTests {
     }
 
     @AfterEach
-    public void restoreStreams() {
+    public void restoreState() {
         System.setOut(originalOut);
         System.setErr(originalErr);
         System.setIn(originalIn);
+
+        try {
+            var dir = new File("./test");
+            for (File file : dir.listFiles())
+                file.delete();
+        } catch(Exception e) {
+
+        }
     }
 
     @Test
-    public void out() {
-        Main.main(null);
-        assertEquals("\"Choose action:\\nadd - add transaction\\nexit - exit console\\nACTION: \"", outContent.toString());
-    }
+    public void MenuShouldReturnProperText() throws Exception {
+        ConsoleView consoleView = new ConsoleView();
 
-    @Test
-    public void out2(){
-        List<String> outList = new ArrayList<>();
-        outList.add("exit");
+        String menuMessage = "Choose action:\nadd - add transaction\nread - read transactions\nexit - exit console\nACTION: ";
+        String actualMessage = consoleView.menu();
 
-        ConsoleView cv = new ConsoleView();
-//        cv.consoleLoop(outList);
+        assertEquals(menuMessage, actualMessage);
     }
 }
