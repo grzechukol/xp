@@ -8,6 +8,8 @@ import java.lang.*;
 
 public class TransactionSaver {
     private String fileName;
+    public static final String DEFAULT_FILE = "./src/main/resources/transactions.csv";
+
     public String getFileName() {
         return fileName;
     }
@@ -18,7 +20,7 @@ public class TransactionSaver {
     }
 
     public TransactionSaver() {
-        fileName = "./src/main/resources/transactions.csv";
+        fileName = DEFAULT_FILE;
         columnNames = this.createColumnNames();
     }
 

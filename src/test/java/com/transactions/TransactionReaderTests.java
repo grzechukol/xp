@@ -43,7 +43,7 @@ public class TransactionReaderTests {
     }
 
     @AfterEach
-    public void CleanUpEach() {
+    public void CleanUp() {
         try {
             var dir = new File("./test");
             for (File file : dir.listFiles())

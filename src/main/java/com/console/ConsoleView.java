@@ -25,7 +25,12 @@ public class ConsoleView {
     }
 
     public String menu() {
-        return "\nChoose action:\nadd - add transaction\nread - read transactions\nexit - exit console\nACTION: ";
+        return "\n" +
+                "Choose action:\n" +
+                "add - add transaction\n" +
+                "read - read transactions\n" +
+                "exit - exit console\n" +
+                "ACTION: ";
     }
 
     public List<String> addTransaction() {
