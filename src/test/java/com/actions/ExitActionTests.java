@@ -1,20 +1,43 @@
 package com.actions;
 
-import org.junit.Rule;
-import org.junit.contrib.java.lang.system.ClearSystemProperties;
+import com.ExitAssertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.security.Permission;
+
+import org.mockito.Mock;
+import org.mockito.Mockito;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.mockito.Mockito.*;
 
 public class ExitActionTests {
-    @Rule
-    public final ClearSystemProperties myPropertyIsCleared
-            = new ClearSystemProperties("MyProperty");
+    private final PrintStream standardOut = System.out;
+    private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 
-    @Test
-    public void overrideProperty() {
-        assertNull(System.getProperty("MyProperty"));
+    @BeforeEach
+    public void setUp() {
+        System.setOut(new PrintStream(outputStreamCaptor));
     }
 
+    @Test
+    public void Inovke_ShouldExitApp_WhenActionIsExit() {
+        var sut = new ExitAction();
+        ExitAssertions.assertExits(0, () -> sut.invoke("exit"));
+        assertEquals("Exiting application...", outputStreamCaptor.toString()
+                .trim());
+    }
+
+    @Test
+    public void Inovke_ShouldCallNextAction_WhenActionIsNotExit() {
+        ExitAction exitActionMock = Mockito.spy(new ExitAction());
+        exitActionMock.invoke("other");
+        verify(exitActionMock, times(1)).invokeNext("other");
+        assertEquals("", outputStreamCaptor.toString()
+                .trim());
+    }
 }

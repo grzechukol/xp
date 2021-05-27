@@ -12,6 +12,6 @@ public class AddActionTests {
     @Test
     public void Invoke_Should() {
         var sut = new AddAction();
-        sut.invoke("add");
+//        sut.invoke("add");
     }
 }
