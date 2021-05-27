@@ -38,13 +38,13 @@ public class ConsoleViewTests {
         }
     }
 
-    @Test
-    public void MenuShouldReturnProperText() throws Exception {
-        ConsoleView consoleView = new ConsoleView();
-
-        String menuMessage = "\nChoose action:\nadd - add transaction\nread - read transactions\nexit - exit console\nACTION: ";
-        String actualMessage = consoleView.menu();
-
-        assertEquals(menuMessage, actualMessage);
-    }
+//    @Test
+//    public void MenuShouldReturnProperText() throws Exception {
+//        ConsoleView consoleView = new ConsoleView();
+//
+//        String menuMessage = "\nChoose action:\nadd - add transaction\nread - read transactions\nexit - exit console\nACTION: ";
+//        String actualMessage = consoleView.menu();
+//
+//        assertEquals(menuMessage, actualMessage);
+//    }
 }
