@@ -10,7 +10,6 @@ import java.util.List;
 public class TransactionReader {
     private String fileName;
     private String[] columnNames;
-    private List<String[]> fileContent = new ArrayList<String[]>();
 
     public TransactionReader() throws IOException {
         this.fileName = TransactionSaver.DEFAULT_FILE;
@@ -38,10 +37,10 @@ public class TransactionReader {
 
     public List<String[]> readFile() throws FileNotFoundException {
         try {
+            var fileContent = new ArrayList<String[]>();
             BufferedReader csvReader = new BufferedReader(new FileReader(this.fileName));
             String row;
 
-            // ominięcie nazw kolumn
             csvReader.readLine();
             while ((row = csvReader.readLine()) != null) {
                 fileContent.add(row.split(";"));
