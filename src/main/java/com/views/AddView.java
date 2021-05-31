@@ -1,8 +1,11 @@
 package com.views;
 
 public class AddView extends BaseView {
+    private String message = "Adding new transaction...";
+
     @Override
-    public void show() {
-        System.out.println("Adding new transaction...");
+    public String show() {
+        System.out.println(message);
+        return message;
     }
 }
