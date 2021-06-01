@@ -29,6 +29,18 @@ public class ReadActionTests {
     }
 
     @Test
+    public void Inovke_ShouldCallReadTransactions_WhenActionRead() throws IOException {
+        // stworzyc nowy testowy plik transakcji
+        // przeczytac go
+        // sprawdzic czy zawartosc sie zgadza
+        // usunac plik
+        ReadAction readActionMock = Mockito.spy(new ReadAction());
+        readActionMock.invoke("read");
+        assertEquals("", outputStreamCaptor.toString()
+                .trim());
+    }
+
+    @Test
     public void Inovke_ShouldCallNextAction_WhenActionIsNotRead() throws IOException {
         ReadAction readActionMock = Mockito.spy(new ReadAction());
         readActionMock.invoke("other");
