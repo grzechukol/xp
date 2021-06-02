@@ -18,6 +18,10 @@ public class ReadAction extends BaseAction {
         this.view = new ReadView();
     }
 
+    public void setTransactionReader(TransactionReader transactionReader) {
+        this.transactionReader = transactionReader;
+    }
+
     @Override
     public boolean invoke(String actionName) {
         if (actionName.equals("read")) {

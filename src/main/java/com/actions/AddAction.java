@@ -19,6 +19,10 @@ public class AddAction extends BaseAction {
         this.view = new AddView();
     }
 
+    public void setTransactionSaver(TransactionSaver transactionSaver) {
+        this.transactionSaver = transactionSaver;
+    }
+
     @Override
     public boolean invoke(String actionName) {
         if (actionName.equals("add")) {
