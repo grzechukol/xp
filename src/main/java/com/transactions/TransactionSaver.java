@@ -1,20 +1,12 @@
 package com.transactions;
 
-import com.jsonUsage.ReadJSONFileFromPath;
-
 import java.io.*;
 import java.util.*;
 import java.lang.*;
 
-import static com.jsonUsage.ReadInputArgs.PATH_TO_JSON;
-
 public class TransactionSaver {
-    static ReadJSONFileFromPath readJSONFileFromPath = new ReadJSONFileFromPath();
-//        static String finalTransactionFilePath = readJSONFileFromPath.getJsonFilePath("/src/main/resources/simplePath.json");
-    static String finalTransactionFilePath = readJSONFileFromPath.getJsonFilePath(PATH_TO_JSON);
-
-    public static String DEFAULT_FILE = finalTransactionFilePath;
     private String fileName;
+    public static final String DEFAULT_FILE = "./src/main/resources/transactions.csv";
     private List<String> allColumnNames;
     private List<String> editableColumnNames;
 
