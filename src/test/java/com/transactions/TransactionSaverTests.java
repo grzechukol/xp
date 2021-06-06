@@ -80,11 +80,12 @@ public class TransactionSaverTests {
     public void Constructor_ShouldCreateCorrectColumnNames_WhenArgsProvided(String fileName, List<String> columns) throws Exception {
         // Arrange
         // Act
-        var sut = new TransactionSaver("./test/" + fileName, columns);
+        var sut = new TransactionSaver("./test/" + fileName, columns, columns);
 
         // Assert
         assertEquals(sut.getFileName(), "./test/" + fileName + ".csv");
-        assertEquals(sut.getColumnNames(), columns);
+        assertEquals(sut.getAllColumnNames(), columns);
+        assertEquals(sut.getEditableColumnNames(), columns);
     }
 
     private static Stream<Arguments> columnsToTest() {
@@ -118,7 +119,7 @@ public class TransactionSaverTests {
         // Arrange
         var file = "./test/exists";
         Files.createDirectories(Paths.get(file + ".csv"));
-        var sut = new TransactionSaver(file, columns);
+        var sut = new TransactionSaver(file, columns, columns);
 
         // Act
         FileNotFoundException exception = assertThrows(FileNotFoundException.class, () -> {
@@ -151,7 +152,7 @@ public class TransactionSaverTests {
     @MethodSource("filesNamesAndFileContent")
     public void AppendDataToFile_ShouldCreateCorrectDataInFile_WhenCorrectDataProvided(String fileName, List<String> columns, List<String> data, String expectedContent) throws Exception {
         // Arrange
-        var sut = new TransactionSaver("./test/" + fileName, columns);
+        var sut = new TransactionSaver("./test/" + fileName, columns, columns);
         var actualContent = "";
 
         // Act
@@ -172,7 +173,7 @@ public class TransactionSaverTests {
     @MethodSource("filesNamesAndFileContentWithTwoLines")
     public void AppendDataToFile_ShouldCreateCorrectDataInFileWithHeader_WhenCorrectDataProvided(String fileName, List<String> columns, List<String> data, String expectedContent) throws Exception {
         // Arrange
-        var sut = new TransactionSaver("./test/" + fileName, columns);
+        var sut = new TransactionSaver("./test/" + fileName, columns, columns);
         var actualContent = "";
 
         // Act

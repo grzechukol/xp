@@ -28,7 +28,7 @@ public class ConsoleView {
         if(!transactionFile.exists()) {
             File file = new File(TransactionSaver.DEFAULT_FILE);
             file.createNewFile();
-            this.transactionSaver.appendDataToFile(this.transactionSaver.getColumnNames());
+            this.transactionSaver.appendDataToFile(this.transactionSaver.getAllColumnNames());
         }
         this.action = new AddAction();
         this.scanner = new Scanner(System.in);
