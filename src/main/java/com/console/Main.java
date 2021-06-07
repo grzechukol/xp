@@ -8,6 +8,8 @@ public class Main {
             ReadInputArgs readInputArgs = new ReadInputArgs();
             if (args.length > 0){
                 readInputArgs.saveInputArgs(args);
+            }else {
+                readInputArgs.setDefaultPath();
             }
 
             ConsoleView consoleView = new ConsoleView();
