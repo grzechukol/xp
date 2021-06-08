@@ -5,11 +5,10 @@ import org.json.simple.parser.JSONParser;
 
 import java.io.FileReader;
 
-
 public class ReadJSONFileFromPath {
     public String filePath = "";
 
-    public String getJsonFilePath(String pathToFile){
+    public String getJsonFilePath(String pathToFile) throws WrongJsonPathException {
         JSONParser parser = new JSONParser();
         try {
             Object obj = parser.parse(new FileReader(pathToFile));
@@ -19,9 +18,9 @@ public class ReadJSONFileFromPath {
             System.out.println("Sciezka do zapisu i odczytu tranzakcji-" + filePath);
 
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new WrongJsonPathException("Path" + pathToFile + " couldn't be found!");
         }
-        
+
         return filePath;
     }
 }
