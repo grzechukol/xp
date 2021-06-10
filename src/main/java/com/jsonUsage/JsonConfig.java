@@ -4,7 +4,6 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import java.io.FileReader;
-import java.net.JarURLConnection;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
