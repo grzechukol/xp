@@ -1,15 +1,12 @@
 package com.console;
 
-import com.jsonUsage.ReadInputArgs;
-
-import java.net.JarURLConnection;
-import java.net.URL;
+import com.jsonUsage.JsonConfig;
 
 public class Main {
     public static void main(String[] args) {
         try {
-            ReadInputArgs readInputArgs = new ReadInputArgs();
-            readInputArgs.saveInputArgs(args);
+            JsonConfig jsonConfig = new JsonConfig();
+            jsonConfig.saveInputArgs(args);
 
             ConsoleView consoleView = new ConsoleView();
             consoleView.start();

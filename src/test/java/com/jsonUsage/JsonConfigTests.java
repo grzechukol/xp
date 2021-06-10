@@ -4,12 +4,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ReadInputArgsTests {
+public class JsonConfigTests {
 
     @Test
     void showSetDefaultPath() {
-        ReadInputArgs testReadInputArgs = new ReadInputArgs();
-        String testPath = testReadInputArgs.setDefaultPath();
+        JsonConfig testJsonConfig = new JsonConfig();
+        String testPath = testJsonConfig.setDefaultPath();
         String os = System.getProperty("os.name");
         String subOS = os.substring(0,7);
 
