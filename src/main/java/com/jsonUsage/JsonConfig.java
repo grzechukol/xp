@@ -27,16 +27,33 @@ public class JsonConfig {
         }
     }
 
-    public static String getTransactionsPath() {
+    public static String getJsonProperty(String key) throws Exception{
         JSONParser parser = new JSONParser();
+        Object obj = parser.parse(new FileReader(PATH_TO_JSON));
+        JSONObject jsonObject = (JSONObject) obj;
+        var property = (String) jsonObject.get(key);
+
+        if (property == null || property.isEmpty()){
+            throw new NoPropertyFoundException();
+        }
+
+        return property;
+    }
+
+    public static String getTransactionsPath() {
         try {
-            Object obj = parser.parse(new FileReader(PATH_TO_JSON));
-            JSONObject jsonObject = (JSONObject) obj;
-            String customFilePath = (String) jsonObject.get("FilePathCustom");
-            return customFilePath;
+            return getJsonProperty("FilePathCustom");
         } catch (Exception e) {
             var basePath = getBasePath();
             return Paths.get(basePath.toString(), TRANSACTIONS_FILENAME).toString();
+        }
+    }
+
+    public static String getCurrency() {
+        try {
+            return getJsonProperty("Currency");
+        } catch (Exception e) {
+            return "USD";
         }
     }
 

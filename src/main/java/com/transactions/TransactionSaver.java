@@ -8,11 +8,7 @@ import java.util.*;
 import java.lang.*;
 
 public class TransactionSaver {
-    static String finalTransactionFilePath;
-
-    static {
-        finalTransactionFilePath = JsonConfig.getTransactionsPath();
-    }
+    static String finalTransactionFilePath = JsonConfig.getTransactionsPath();
 
     public static String DEFAULT_FILE = finalTransactionFilePath;
     private String fileName;
