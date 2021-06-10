@@ -1,6 +1,7 @@
 package com.console;
 
 import com.actions.*;
+import com.presenter.ConsolePresenter;
 import com.transactions.IncorrectDataException;
 import com.transactions.TransactionReader;
 import com.transactions.TransactionSaver;
@@ -28,22 +29,21 @@ public class ConsoleView {
         if(!transactionFile.exists()) {
             File file = new File(TransactionSaver.DEFAULT_FILE);
             file.createNewFile();
-            this.transactionSaver.appendDataToFile(this.transactionSaver.getColumnNames());
+            this.transactionSaver.appendDataToFile(this.transactionSaver.getAllColumnNames());
         }
         this.action = new AddAction();
         this.scanner = new Scanner(System.in);
     }
 
     public void start() throws IOException {
-        BaseView view;
+        ConsolePresenter presenter = new ConsolePresenter(new MainView());
         this.action
                 .linkWith(new ReadAction())
                 .linkWith(new ExitAction())
                 .linkWith(new NotFoundAction());
 
         while(true) {
-            view = new MainView();
-            view.show();
+            presenter.getShow();
             var command = scanner.nextLine();
             this.action.invoke(command);
         }
