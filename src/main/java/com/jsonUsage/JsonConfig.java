@@ -9,6 +9,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class JsonConfig {
+    public static String TRANSACTIONS_FILENAME = "transactions.csv";
+
     public static Path getBasePath() {
         return Paths.get(System.getProperty("user.dir"));
     }
@@ -26,11 +28,6 @@ public class JsonConfig {
         }
     }
 
-    public String setDefaultPath() {
-        PATH_TO_JSON = getDefaultJsonPath();
-        return PATH_TO_JSON;
-    }
-
     public static String getTransactionsPath() {
         JSONParser parser = new JSONParser();
         try {
@@ -40,7 +37,7 @@ public class JsonConfig {
             return customFilePath;
         } catch (Exception e) {
             var basePath = getBasePath();
-            return Paths.get(basePath.toString(), "transactions.csv").toString();
+            return Paths.get(basePath.toString(), TRANSACTIONS_FILENAME).toString();
         }
     }
 
