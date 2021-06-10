@@ -14,9 +14,9 @@ public class ReadInputArgsTests {
         String subOS = os.substring(0,7);
 
         if (subOS.equals("Windows")) {
-            assertEquals("\\src\\main\\resources\\simplePath.json", testPath);
+            assertEquals("\\src\\main\\resources\\configFile.json", testPath);
         }else {
-            assertEquals("/src/main/resources/simplePath.json", testPath);
+            assertEquals("/src/main/resources/configFile.json", testPath);
         }
     }
 }

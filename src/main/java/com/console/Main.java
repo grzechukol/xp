@@ -2,15 +2,14 @@ package com.console;
 
 import com.jsonUsage.ReadInputArgs;
 
+import java.net.JarURLConnection;
+import java.net.URL;
+
 public class Main {
     public static void main(String[] args) {
         try {
             ReadInputArgs readInputArgs = new ReadInputArgs();
-            if (args.length > 0){
-                readInputArgs.saveInputArgs(args);
-            }else {
-                readInputArgs.setDefaultPath();
-            }
+            readInputArgs.saveInputArgs(args);
 
             ConsoleView consoleView = new ConsoleView();
             consoleView.start();
