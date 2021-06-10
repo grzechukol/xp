@@ -1,7 +1,7 @@
 package com.actions;
 
+import com.presenter.ConsolePresenter;
 import com.transactions.TransactionReader;
-import com.views.BaseView;
 import com.views.ReadView;
 
 import java.io.FileNotFoundException;
@@ -11,11 +11,11 @@ import java.util.Scanner;
 
 public class ReadAction extends BaseAction {
     private TransactionReader transactionReader;
-    private BaseView view;
+    private ConsolePresenter presenter;
 
     public ReadAction() throws IOException {
         this.transactionReader = new TransactionReader();
-        this.view = new ReadView();
+        this.presenter = new ConsolePresenter(new ReadView());
     }
 
     public void setTransactionReader(TransactionReader transactionReader) {
@@ -25,7 +25,7 @@ public class ReadAction extends BaseAction {
     @Override
     public boolean invoke(String actionName) {
         if (actionName.equals("read")) {
-            view.show();
+            presenter.getShow();
             this.readTransactions();
             return true;
         }

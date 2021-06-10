@@ -1,19 +1,20 @@
 package com.actions;
 
+import com.presenter.ConsolePresenter;
 import com.views.BaseView;
 import com.views.NotFoundView;
 import com.views.ReadView;
 
 public class NotFoundAction extends BaseAction {
-    private BaseView view;
+    private ConsolePresenter presenter;
 
     public NotFoundAction() {
-        this.view = new NotFoundView();
+        this.presenter = new ConsolePresenter(new NotFoundView());
     }
 
     @Override
     public boolean invoke(String actionName) {
-        view.show();
+        presenter.getShow();
         return false;
     }
 }

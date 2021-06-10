@@ -1,19 +1,19 @@
 package com.actions;
 
+import com.presenter.ConsolePresenter;
 import com.transactions.TransactionSaver;
 import com.views.AddView;
-import com.views.BaseView;
 
 import java.util.*;
 
 public class AddAction extends BaseAction {
     private TransactionSaver transactionSaver;
     private Scanner scanner;
-    private BaseView view;
+    private ConsolePresenter presenter;
 
     public AddAction() {
         this.transactionSaver = new TransactionSaver();
-        this.view = new AddView();
+        this.presenter = new ConsolePresenter(new AddView());
     }
 
     public void setTransactionSaver(TransactionSaver transactionSaver) {
@@ -23,7 +23,7 @@ public class AddAction extends BaseAction {
     @Override
     public boolean invoke(String actionName) {
         if (actionName.equals("add")) {
-            view.show();
+            presenter.getShow();
             try {
                 this.transactionSaver.appendDataToFile(this.addTransaction());
                 System.out.println("Transaction added succesfully!");

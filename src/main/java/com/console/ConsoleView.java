@@ -1,6 +1,7 @@
 package com.console;
 
 import com.actions.*;
+import com.presenter.ConsolePresenter;
 import com.transactions.IncorrectDataException;
 import com.transactions.TransactionReader;
 import com.transactions.TransactionSaver;
@@ -35,15 +36,14 @@ public class ConsoleView {
     }
 
     public void start() throws IOException {
-        BaseView view;
+        ConsolePresenter presenter = new ConsolePresenter(new MainView());
         this.action
                 .linkWith(new ReadAction())
                 .linkWith(new ExitAction())
                 .linkWith(new NotFoundAction());
 
         while(true) {
-            view = new MainView();
-            view.show();
+            presenter.getShow();
             var command = scanner.nextLine();
             this.action.invoke(command);
         }
