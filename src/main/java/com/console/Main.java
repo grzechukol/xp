@@ -1,16 +1,12 @@
 package com.console;
 
-import com.jsonUsage.ReadInputArgs;
+import com.jsonUsage.JsonConfig;
 
 public class Main {
     public static void main(String[] args) {
         try {
-            ReadInputArgs readInputArgs = new ReadInputArgs();
-            if (args.length > 0){
-                readInputArgs.saveInputArgs(args);
-            }else {
-                readInputArgs.setDefaultPath();
-            }
+            JsonConfig jsonConfig = new JsonConfig();
+            jsonConfig.saveInputArgs(args);
 
             ConsoleView consoleView = new ConsoleView();
             consoleView.start();

@@ -1,25 +1,14 @@
 package com.transactions;
 
-import com.jsonUsage.ReadJSONFileFromPath;
+import com.jsonUsage.JsonConfig;
 import com.jsonUsage.WrongJsonPathException;
 
 import java.io.*;
 import java.util.*;
 import java.lang.*;
 
-import static com.jsonUsage.ReadInputArgs.PATH_TO_JSON;
-
 public class TransactionSaver {
-    static ReadJSONFileFromPath readJSONFileFromPath = new ReadJSONFileFromPath();
-    static String finalTransactionFilePath;
-
-    static {
-        try {
-            finalTransactionFilePath = readJSONFileFromPath.getJsonFilePath(PATH_TO_JSON);
-        } catch (WrongJsonPathException e) {
-            e.printStackTrace();
-        }
-    }
+    static String finalTransactionFilePath = JsonConfig.getTransactionsPath();
 
     public static String DEFAULT_FILE = finalTransactionFilePath;
     private String fileName;

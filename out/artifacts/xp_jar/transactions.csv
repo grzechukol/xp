@@ -1,0 +1,5 @@
+ID;Name;Description;Date;Currency;Price
+1;Test 1;test;Thu Jun 10 23:42:23 CEST 2021;USD;10.0
+2;Test 2;test;Thu Jun 10 23:54:23 CEST 2021;PLN;100.0
+3;Test 3;test;Thu Jun 10 23:55:32 CEST 2021;USD;10.0
+4;Test 4;test;Thu Jun 10 23:56:13 CEST 2021;PLN;3.0

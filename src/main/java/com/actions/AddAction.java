@@ -1,5 +1,6 @@
 package com.actions;
 
+import com.jsonUsage.JsonConfig;
 import com.presenter.ConsolePresenter;
 import com.transactions.TransactionSaver;
 import com.views.AddView;
@@ -53,7 +54,7 @@ public class AddAction extends BaseAction {
                 if(column.equals("Date")) {
                     transactionDetails.add(new Date().toString());
                 } else if (column.equals("Currency")) {
-                    transactionDetails.add("$");
+                    transactionDetails.add(JsonConfig.getCurrency());
                 }
             }
         }
