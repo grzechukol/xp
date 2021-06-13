@@ -27,6 +27,6 @@ public class NotFoundViewTests {
     void Show_Should_PrintCorrectTextToStdin() {
         var sut = new NotFoundView();
         sut.show();
-        assertEquals("No match for command, try again...\n", outputStreamCaptor.toString());
+        assertEquals("No match for command, try again...\r\n", outputStreamCaptor.toString());
     }
 }

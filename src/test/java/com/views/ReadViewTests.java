@@ -27,6 +27,6 @@ public class ReadViewTests {
     void Show_Should_PrintCorrectTextToStdin() {
         var sut = new ReadView();
         sut.show();
-        assertEquals("Reading transactions...\n", outputStreamCaptor.toString());
+        assertEquals("Reading transactions...\r\n", outputStreamCaptor.toString());
     }
 }

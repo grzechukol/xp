@@ -27,6 +27,6 @@ public class AddViewTests {
     void Show_Should_PrintCorrectTextToStdin() {
         var sut = new AddView();
         sut.show();
-        assertEquals("Adding new transaction...\n", outputStreamCaptor.toString());
+        assertEquals("Adding new transaction...\r\n", outputStreamCaptor.toString());
     }
 }

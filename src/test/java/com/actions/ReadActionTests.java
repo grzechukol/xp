@@ -68,8 +68,8 @@ public class ReadActionTests {
         TransactionReader transactionReader = new TransactionReader(fileName);
         sut.setTransactionReader(transactionReader);
         sut.invoke("read");
-        var expected = "Reading transactions...\n" +
-                "[1, Transaction1, Transaction1 Description, 10-05-2021, EUR]\n" +
+        var expected = "Reading transactions...\r\n" +
+                "[1, Transaction1, Transaction1 Description, 10-05-2021, EUR]\r\n" +
                 "[2, Transaction2, Transaction2 Description, 11-05-2021, USD]";
         assertEquals(expected, outputStreamCaptor.toString()
                 .trim());

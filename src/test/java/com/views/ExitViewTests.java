@@ -27,6 +27,6 @@ public class ExitViewTests {
     void Show_Should_PrintCorrectTextToStdin() {
         var sut = new ExitView();
         sut.show();
-        assertEquals("Exiting application...\n", outputStreamCaptor.toString());
+        assertEquals("Exiting application...\r\n", outputStreamCaptor.toString());
     }
 }

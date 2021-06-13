@@ -45,7 +45,7 @@ public class AddActionTests {
 
         var sut = new AddAction();
         sut.invoke("add");
-        assertEquals("Adding new transaction...\n" + "Name: Description: Price: Transaction added succesfully!",
+        assertEquals("Adding new transaction...\r\n" + "Name: Description: Price: Transaction added succesfully!",
                 outputStreamCaptor.toString().trim());
     }
 
