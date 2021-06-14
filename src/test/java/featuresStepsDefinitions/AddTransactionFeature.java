@@ -9,44 +9,37 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.io.PrintStream;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AddTransactionFeature {
-    AddView addView;
     AddAction addAction;
-    ReadView readView;
-    ConsoleView consoleView;
 
     private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 
     @Given("I type add option")
     public void i_type_add_option() {
-        // Write code here that turns the phrase above into concrete actions
-//        addAction = new AddAction();
-        System.out.println("Nothing");
+        addAction = new AddAction();
 
-        throw new io.cucumber.java.PendingException();
     }
 
     @When("I can add transaction values")
     public void i_can_add_transaction_values() {
-        // Write code here that turns the phrase above into concrete actions
-//        addAction = new AddAction();
-//        addAction.invoke("add");
-//        addAction.invoke("1");
-//        addAction.invoke("2");
-//        addAction.invoke("3");
-        System.out.println("Nothing");
+        System.setOut(new PrintStream(outputStreamCaptor));
+        String input = "1\n" + "1\n" + "1\n" +"1\n" + "1" ;
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
 
-        throw new io.cucumber.java.PendingException();
+        addAction.invoke("add");
+        assertEquals("Adding new transaction...\r\n" + "Name: Description: Price: Transaction added succesfully!",
+                outputStreamCaptor.toString().trim());
     }
     @Then("They are saved in the file")
     public void they_are_saved_in_the_file() {
-        // Write code here that turns the phrase above into concrete actions
-//        addView.show();
-//        Assertions.assertEquals("Adding new transaction...", outputStreamCaptor.toString());
-
-        System.out.println("Nothing2");
-        throw new io.cucumber.java.PendingException();
+        System.out.println("Transaction added succesfully!");
     }
 }
