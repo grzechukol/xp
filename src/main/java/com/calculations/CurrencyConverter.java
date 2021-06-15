@@ -16,7 +16,7 @@ public class CurrencyConverter {
     public static Double convert(String fromCurrencyName, String toCurrencyName, Double value) {
         try {
             var rate = JsonConfig.getExchangeRate(fromCurrencyName, toCurrencyName);
-            return rate;
+            return rate*value;
         } catch (NoConverterException e) {
             return value;
         }

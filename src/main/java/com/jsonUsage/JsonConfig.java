@@ -65,8 +65,8 @@ public class JsonConfig {
             Object obj = parser.parse(new FileReader(PATH_TO_JSON));
             JSONObject jsonObject = (JSONObject) obj;
             JSONObject rates = (JSONObject) jsonObject.get(EXCHANGE_RATE_KEY);
-            JSONObject rate = (JSONObject) jsonObject.get(fromCurrencyName);
-            Double value = (Double) jsonObject.get(toCurrencyName);
+            JSONObject rate = (JSONObject) rates.get(fromCurrencyName);
+            Double value = (Double) rate.get(toCurrencyName);
             return value;
         } catch (Exception e) {
             throw new NoConverterException("Please provide converter for "+ fromCurrencyName + "->"+ toCurrencyName);
