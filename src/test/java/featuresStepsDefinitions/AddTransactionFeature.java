@@ -27,8 +27,8 @@ public class AddTransactionFeature {
 
     }
 
-    @When("I can add transaction values")
-    public void i_can_add_transaction_values() {
+    @When("I add transaction values")
+    public void i_add_transaction_values() {
         System.setOut(new PrintStream(outputStreamCaptor));
         String input = "1\n" + "1\n" + "1\n" +"1\n" + "1" ;
         InputStream in = new ByteArrayInputStream(input.getBytes());
