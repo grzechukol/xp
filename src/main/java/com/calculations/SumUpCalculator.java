@@ -39,14 +39,14 @@ public class SumUpCalculator {
             var key = entry.getKey();
             var value = entry.getValue();
 
-            var splitKey = key.split("");
+            var splitKey = key.split(":");
             var name = splitKey[0];
             var currency = splitKey[1];
 
             if (value > 0) {
-                System.out.println(name + " owes you " + value + currency);
+                System.out.println(name + " owes you " + value + " " + currency);
             } else {
-                System.out.println("You owe "+ name + " " + Math.abs(value) + currency);
+                System.out.println("You owe "+ name + " " + Math.abs(value) + " " + currency);
             }
         }
 
