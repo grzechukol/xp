@@ -40,6 +40,7 @@ public class ConsoleView {
         this.action
                 .linkWith(new ReadAction())
                 .linkWith(new ExitAction())
+                .linkWith(new SummarizeAction())
                 .linkWith(new NotFoundAction());
 
         while(true) {

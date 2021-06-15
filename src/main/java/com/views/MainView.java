@@ -8,6 +8,7 @@ public class MainView extends BaseView {
                 "Choose action:\n" +
                 "add - add transaction\n" +
                 "read - read transactions\n" +
+                "summarize - display summarized transactions\n" +
                 "exit - exit console\n" +
                 "ACTION: "
                 );
