@@ -28,6 +28,10 @@ public class SummarizeAction extends BaseAction {
         return invokeNext(actionName);
     }
 
+    public void setTransactionReader(TransactionReader transactionReader) {
+        this.transactionReader = transactionReader;
+    }
+
     private void displaySummary() {
         try {
             var transactions =  this.transactionReader.readFile();
