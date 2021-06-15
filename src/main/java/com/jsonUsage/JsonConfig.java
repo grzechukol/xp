@@ -6,9 +6,11 @@ import org.json.simple.parser.JSONParser;
 import java.io.FileReader;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.HashMap;
 
 public class JsonConfig {
     public static String TRANSACTIONS_FILENAME = "transactions.csv";
+    public static String EXCHANGE_RATE_KEY = "rates";
 
     public static Path getBasePath() {
         return Paths.get(System.getProperty("user.dir"));
@@ -57,10 +59,15 @@ public class JsonConfig {
         }
     }
 
-    public static Number getCurrencyConverter(String fromCurrencyName, String toCurrencyName) throws NoConverterException {
+    public static Double getExchangeRate(String fromCurrencyName, String toCurrencyName) throws NoConverterException {
         try {
-            getJsonProperty("converters");
-            return 3;
+            JSONParser parser = new JSONParser();
+            Object obj = parser.parse(new FileReader(PATH_TO_JSON));
+            JSONObject jsonObject = (JSONObject) obj;
+            JSONObject rates = (JSONObject) jsonObject.get(EXCHANGE_RATE_KEY);
+            JSONObject rate = (JSONObject) jsonObject.get(fromCurrencyName);
+            Double value = (Double) jsonObject.get(toCurrencyName);
+            return value;
         } catch (Exception e) {
             throw new NoConverterException("Please provide converter for "+ fromCurrencyName + "->"+ toCurrencyName);
         }
