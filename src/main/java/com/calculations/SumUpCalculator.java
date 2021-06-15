@@ -12,7 +12,7 @@ public class SumUpCalculator {
         this.transactions = transactions;
     }
 
-    private Map<String, Double> getSummaryMap() {
+    public Map<String, Double> getSummaryMap() {
         Map<String, Double> summary = new HashMap<>();
 
         for (String[] transaction : this.transactions) {
