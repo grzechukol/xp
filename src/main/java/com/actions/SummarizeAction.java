@@ -1,5 +1,6 @@
 package com.actions;
 
+import com.calculations.SumUpCalculator;
 import com.presenter.ConsolePresenter;
 import com.transactions.TransactionReader;
 import com.views.SummarizeView;
@@ -30,7 +31,8 @@ public class SummarizeAction extends BaseAction {
     private void displaySummary() {
         try {
             var transactions =  this.transactionReader.readFile();
-            System.out.println("tests");
+            var calculator = new SumUpCalculator(transactions);
+            calculator.printSummary();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (NullPointerException e) {
