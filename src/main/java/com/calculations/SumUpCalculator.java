@@ -1,5 +1,7 @@
 package com.calculations;
 
+import com.jsonUsage.JsonConfig;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -18,9 +20,19 @@ public class SumUpCalculator {
         for (String[] transaction : this.transactions) {
             var name = transaction[1];
             var currency = transaction[4];
+            var baseCurrency = JsonConfig.getCurrency();
             var price = Double.parseDouble(transaction[5]);
 
-            var key = name + ":" + currency;
+            var isCurrencyBase = currency.equals(baseCurrency);
+            var isConvertible = CurrencyConverter.isConvertible(currency, baseCurrency);
+
+            var key = "";
+            if (isCurrencyBase || !isConvertible) {
+                key = name + ":" + currency;
+            } else {
+                key = name + ":" + baseCurrency;
+                price = CurrencyConverter.convert(currency, baseCurrency, price);
+            }
 
             if (summary.containsKey(key)) {
                 summary.put(key, summary.get(key)+price);

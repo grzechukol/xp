@@ -57,4 +57,13 @@ public class JsonConfig {
         }
     }
 
+    public static Number getCurrencyConverter(String fromCurrencyName, String toCurrencyName) throws NoConverterException {
+        try {
+            getJsonProperty("converters");
+            return 3;
+        } catch (Exception e) {
+            throw new NoConverterException("Please provide converter for "+ fromCurrencyName + "->"+ toCurrencyName);
+        }
+    }
+
 }
